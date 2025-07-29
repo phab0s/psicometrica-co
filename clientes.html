@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - PsicoMétrica Consultores S.A.S</title>
+    <meta name="description" content="Conoce algunos de nuestros clientes satisfechos y casos de éxito en evaluación psicométrica y desarrollo organizacional.">
+    <meta name="keywords" content="clientes, casos de éxito, testimonios, evaluación psicométrica, desarrollo organizacional">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Colores principales */
+            --blanco: #FFFFFF;
+            --fondo-claro: #F8FAFC;
+            --texto-principal: #1E293B;
+            --texto-secundario: #64748B;
+            
+            /* Colores de acento basados en el logo */
+            --azul-marino: #1E3A8A;
+            --verde-vibrante: #10B981;
+            --azul-suave: #3B82F6;
+            --verde-suave: #34D399;
+            
+            /* Colores de apoyo */
+            --gris-claro: #F1F5F9;
+            --gris-medio: #CBD5E1;
+            --gris-oscuro: #475569;
+            --sombra: rgba(0, 0, 0, 0.05);
+            --borde: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+            background-color: var(--blanco);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--azul-marino);
+            margin-bottom: 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--negro) 0%, var(--azul-marino) 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: none;
+        }
+
+        .logo-text .psicometrica {
+            color: var(--azul-marino);
+            background: var(--blanco);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .logo-text .consultores {
+            color: var(--verde-vibrante);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--verde-vibrante);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--verde-vibrante);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-marino) 0%, var(--negro) 100%);
+            color: var(--blanco);
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--blanco);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 5rem 0;
+            background: var(--blanco);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: var(--gris-claro);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--verde-vibrante);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--azul-marino);
+            font-weight: 600;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 5rem 0;
+            background: var(--gris-claro);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--blanco);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--verde-vibrante);
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--gris-oscuro);
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--azul-marino), var(--verde-vibrante));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco);
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--gris-oscuro);
+            font-size: 0.9rem;
+        }
+
+        /* Case Studies Section */
+        .cases-section {
+            padding: 5rem 0;
+            background: var(--blanco);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: var(--gris-claro);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .case-header {
+            background: linear-gradient(135deg, var(--azul-marino), var(--verde-vibrante));
+            color: var(--blanco);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .case-header h3 {
+            color: var(--blanco);
+            margin-bottom: 0.5rem;
+        }
+
+        .case-header p {
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .case-content {
+            padding: 1.5rem;
+        }
+
+        .case-content h4 {
+            color: var(--azul-marino);
+            margin-bottom: 1rem;
+        }
+
+        .case-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .case-content li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .case-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--verde-vibrante);
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--azul-marino) 0%, var(--negro) 100%);
+            color: var(--blanco);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--blanco);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--verde-vibrante);
+            color: var(--blanco);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--verde-suave);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--negro);
+            color: var(--blanco);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--verde-vibrante);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--gris-medio);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--verde-vibrante);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gris-oscuro);
+            padding-top: 1rem;
+            text-align: center;
+            color: var(--gris-medio);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="PsicoMétrica Consultores">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/soluciones">Soluciones</a></li>
+                <li><a href="/clientes">Clientes</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Nuestros Clientes</h1>
+            <p>Organizaciones que confían en nuestros servicios de evaluación psicométrica y desarrollo organizacional</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Proyectos Completados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Tasa de Satisfacción</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "PsicoMétrica Consultores transformó completamente nuestro proceso de selección de personal. Sus evaluaciones psicométricas nos han permitido identificar candidatos con el perfil exacto que necesitamos."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>Directora de RRHH - Empresa Industrial</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "La implementación de sus programas de formación y desarrollo ha mejorado significativamente el rendimiento de nuestro equipo. Los resultados son evidentes en la productividad y satisfacción laboral."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">C</div>
+                        <div class="author-info">
+                            <h4>Carlos Rodríguez</h4>
+                            <p>Gerente General - Consultora Financiera</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Su trabajo en la reorganización de nuestra estructura ha sido fundamental para optimizar procesos y mejorar la eficiencia operativa. Altamente recomendados."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Ana Martínez</h4>
+                            <p>CEO - Startup Tecnológica</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "La evaluación psicométrica que realizaron para nuestro proceso de ascensos fue muy profesional y nos dio resultados confiables para tomar decisiones estratégicas."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <h4>Luis Pérez</h4>
+                            <p>Director de Operaciones - Empresa de Servicios</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Su enfoque en la gestión del conocimiento nos ha ayudado a crear una cultura de aprendizaje continuo. El impacto en la innovación de la empresa ha sido notable."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Patricia Silva</h4>
+                            <p>Directora de Innovación - Corporación Multinacional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Excelente trabajo en el diseño de instrumentos psicométricos personalizados para nuestro sector. La validación y confiabilidad de sus herramientas es excepcional."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Roberto Torres</h4>
+                            <p>Gerente de Talento - Empresa de Salud</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="cases-section">
+        <div class="container">
+            <h2 class="section-title">Casos de Éxito</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Evaluación Psicométrica</h3>
+                        <p>Empresa Industrial - 500 empleados</p>
+                    </div>
+                    <div class="case-content">
+                        <h4>Desafío</h4>
+                        <p>Necesitaban evaluar competencias técnicas y comportamentales para procesos de selección masiva.</p>
+                        <h4>Solución</h4>
+                        <ul>
+                            <li>Diseño de batería psicométrica personalizada</li>
+                            <li>Evaluación de 200 candidatos en 3 meses</li>
+                            <li>Reducción del 40% en tiempo de contratación</li>
+                            <li>Mejora del 60% en retención de personal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Desarrollo Organizacional</h3>
+                        <p>Startup Tecnológica - 50 empleados</p>
+                    </div>
+                    <div class="case-content">
+                        <h4>Desafío</h4>
+                        <p>Necesitaban estructurar procesos de trabajo y definir roles en crecimiento acelerado.</p>
+                        <h4>Solución</h4>
+                        <ul>
+                            <li>Rediseño de estructura organizacional</li>
+                            <li>Definición de perfiles y responsabilidades</li>
+                            <li>Implementación de procesos de comunicación</li>
+                            <li>Aumento del 35% en productividad</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Formación y Desarrollo</h3>
+                        <p>Consultora Financiera - 150 empleados</p>
+                    </div>
+                    <div class="case-content">
+                        <h4>Desafío</h4>
+                        <p>Requerían desarrollar habilidades de liderazgo y trabajo en equipo en mandos medios.</p>
+                        <h4>Solución</h4>
+                        <ul>
+                            <li>Programa de formación por competencias</li>
+                            <li>Evaluación de impacto pre y post</li>
+                            <li>Coaching individual y grupal</li>
+                            <li>Mejora del 45% en satisfacción laboral</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Quieres Ser Nuestro Próximo Caso de Éxito?</h2>
+            <p>Únete a las organizaciones que ya confían en nuestros servicios para transformar sus procesos de gestión humana</p>
+            <a href="/contacto" class="cta-button">Solicitar Propuesta</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PsicoMétrica Consultores</h3>
+                    <p>Especialistas en evaluación psicométrica y desarrollo organizacional. Damos respuesta a sus necesidades de evaluación psicométrica.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="/soluciones">Evaluación Psicométrica</a></li>
+                        <li><a href="/soluciones">Selección de Personal</a></li>
+                        <li><a href="/soluciones">Organización del Trabajo</a></li>
+                        <li><a href="/soluciones">Formación y Desarrollo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@psicometrica.co</p>
+                    <p><i class="fas fa-phone"></i> +57 (1) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PsicoMétrica Consultores S.A.S. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Animate stats on scroll
+        const stats = document.querySelectorAll('.stat-number');
+        
+        const animateStats = () => {
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                const increment = target / 50;
+                let current = 0;
+                
+                const updateStat = () => {
+                    if (current < target) {
+                        current += increment;
+                        stat.textContent = Math.ceil(current) + (stat.textContent.includes('+') ? '+' : '') + (stat.textContent.includes('%') ? '%' : '');
+                        requestAnimationFrame(updateStat);
+                    } else {
+                        stat.textContent = target + (stat.textContent.includes('+') ? '+' : '') + (stat.textContent.includes('%') ? '%' : '');
+                    }
+                };
+                
+                updateStat();
+            });
+        };
+
+        // Trigger animation when stats section is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>

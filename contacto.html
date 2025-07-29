@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - PsicoMétrica Consultores S.A.S</title>
+    <meta name="description" content="Contáctanos para solicitar nuestros servicios de evaluación psicométrica y desarrollo organizacional. Estamos aquí para ayudarte.">
+    <meta name="keywords" content="contacto, consultoría, evaluación psicométrica, desarrollo organizacional, servicios">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Colores principales */
+            --blanco: #FFFFFF;
+            --fondo-claro: #F8FAFC;
+            --texto-principal: #1E293B;
+            --texto-secundario: #64748B;
+            
+            /* Colores de acento basados en el logo */
+            --azul-marino: #1E3A8A;
+            --verde-vibrante: #10B981;
+            --azul-suave: #3B82F6;
+            --verde-suave: #34D399;
+            
+            /* Colores de apoyo */
+            --gris-claro: #F1F5F9;
+            --gris-medio: #CBD5E1;
+            --gris-oscuro: #475569;
+            --sombra: rgba(0, 0, 0, 0.05);
+            --borde: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+            background-color: var(--blanco);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--azul-marino);
+            margin-bottom: 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--negro) 0%, var(--azul-marino) 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: none;
+        }
+
+        .logo-text .psicometrica {
+            color: var(--azul-marino);
+            background: var(--blanco);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .logo-text .consultores {
+            color: var(--verde-vibrante);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--verde-vibrante);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--verde-vibrante);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-marino) 0%, var(--negro) 100%);
+            color: var(--blanco);
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--blanco);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: var(--blanco);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--gris-oscuro);
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--gris-claro);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--verde-vibrante);
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p {
+            color: var(--gris-oscuro);
+            margin: 0;
+        }
+
+        /* Form */
+        .contact-form {
+            background: var(--gris-claro);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--azul-marino);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--gris-medio);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: var(--blanco);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--verde-vibrante);
+            box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--verde-vibrante);
+            color: var(--blanco);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: var(--verde-suave);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 5rem 0;
+            background: var(--gris-claro);
+        }
+
+        .map-container {
+            background: var(--blanco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .map-placeholder {
+            height: 400px;
+            background: linear-gradient(135deg, var(--azul-marino), var(--verde-vibrante));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco);
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--negro);
+            color: var(--blanco);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--verde-vibrante);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--gris-medio);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--verde-vibrante);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gris-oscuro);
+            padding-top: 1rem;
+            text-align: center;
+            color: var(--gris-medio);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="PsicoMétrica Consultores">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/soluciones">Soluciones</a></li>
+                <li><a href="/clientes">Clientes</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Contáctanos</h1>
+            <p>Estamos aquí para ayudarte con tus necesidades de evaluación psicométrica y desarrollo organizacional</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Hablemos de tu Proyecto</h2>
+                    <p>¿Tienes alguna consulta sobre nuestros servicios? ¿Necesitas una propuesta personalizada? No dudes en contactarnos. Nuestro equipo de especialistas está listo para ayudarte.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>info@psicometrica.co</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Teléfono</h3>
+                                <p>+57 (1) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Dirección</h3>
+                                <p>Bogotá, Colombia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Horario de Atención</h3>
+                                <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo *</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="empresa">Empresa</label>
+                                <input type="text" id="empresa" name="empresa">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="servicio">Servicio de Interés</label>
+                            <select id="servicio" name="servicio">
+                                <option value="">Selecciona un servicio</option>
+                                <option value="evaluacion-psicometrica">Evaluación Psicométrica</option>
+                                <option value="seleccion-personal">Selección de Personal</option>
+                                <option value="organizacion-trabajo">Organización del Trabajo</option>
+                                <option value="formacion-desarrollo">Formación y Desarrollo</option>
+                                <option value="gestion-conocimiento">Gestión del Conocimiento</option>
+                                <option value="direccionamiento-estrategico">Apoyo al Direccionamiento Estratégico</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto o consulta..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Nuestra Ubicación</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div style="text-align: center;">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <p>Bogotá, Colombia</p>
+                        <p style="font-size: 1rem; opacity: 0.8;">Mapa interactivo disponible próximamente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PsicoMétrica Consultores</h3>
+                    <p>Especialistas en evaluación psicométrica y desarrollo organizacional. Damos respuesta a sus necesidades de evaluación psicométrica.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="/soluciones">Evaluación Psicométrica</a></li>
+                        <li><a href="/soluciones">Selección de Personal</a></li>
+                        <li><a href="/soluciones">Organización del Trabajo</a></li>
+                        <li><a href="/soluciones">Formación y Desarrollo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@psicometrica.co</p>
+                    <p><i class="fas fa-phone"></i> +57 (1) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PsicoMétrica Consultores S.A.S. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your server
+            // For now, we'll just show a success message
+            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Form validation
+        const inputs = document.querySelectorAll('input[required], textarea[required]');
+        
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.style.borderColor = '#e53e3e';
+                } else {
+                    this.style.borderColor = '#e2e8f0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
