@@ -202,63 +202,67 @@
             margin-bottom: 3rem;
         }
 
-        .services-grid {
+        .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .service-card {
+        .case-card {
             background: var(--gris-claro);
             border-radius: 15px;
-            padding: 2.5rem;
+            overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border-left: 5px solid var(--verde-vibrante);
+            transition: transform 0.3s ease;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        .case-card:hover {
+            transform: translateY(-5px);
         }
 
-        .service-icon {
-            font-size: 3rem;
-            color: var(--azul-marino);
-            margin-bottom: 1.5rem;
+        .case-header {
+            background: linear-gradient(135deg, var(--azul-marino), var(--verde-vibrante));
+            color: var(--blanco);
+            padding: 1.5rem;
             text-align: center;
         }
 
-        .service-card h3 {
-            font-size: 1.5rem;
+        .case-header h3 {
+            color: var(--blanco);
+            margin-bottom: 0.5rem;
+        }
+
+        .case-header p {
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .case-content {
+            padding: 1.5rem;
+        }
+
+        .case-content h4 {
+            color: var(--azul-marino);
             margin-bottom: 1rem;
-            text-align: center;
-            color: var(--azul-marino);
         }
 
-        .service-card ul {
+        .case-content ul {
             list-style: none;
-            margin-top: 1rem;
+            padding: 0;
         }
 
-        .service-card li {
+        .case-content li {
             padding: 0.5rem 0;
             position: relative;
             padding-left: 1.5rem;
         }
 
-        .service-card li::before {
+        .case-content li::before {
             content: '✓';
             position: absolute;
             left: 0;
             color: var(--verde-vibrante);
             font-weight: bold;
-        }
-
-        .service-card p {
-            color: var(--gris-oscuro);
-            margin-bottom: 1rem;
-            text-align: center;
         }
 
         /* Process Section */
@@ -488,90 +492,115 @@
     <section class="services-section">
         <div class="container">
             <h2 class="section-title">Servicios Especializados</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Evaluación Psicométrica</h3>
+                        <p>Instrumentos personalizados para evaluación integral</p>
                     </div>
-                    <h3>Evaluación Psicométrica</h3>
-                    <p>Diseño, construcción y validación de instrumentos para la evaluación de aptitudes, conocimientos y competencias comportamentales.</p>
-                    <ul>
-                        <li>Diseño, construcción y validación de instrumentos para la evaluación de aptitudes, conocimientos y competencias comportamentales.</li>
-                        <li>Evaluación de desempeño.</li>
-                        <li>Medición y evaluación de clima y cultura organizacional.</li>
-                        <li>Medición de riesgo psicosocial.</li>
-                        <li>Procesamiento, análisis psicométrico e interpretación de resultados de encuestas, pruebas e instrumentos de evaluación de atributos.</li>
-                    </ul>
+                    <div class="case-content">
+                        <h4>Desafío</h4>
+                        <p>Organizaciones necesitan evaluar competencias técnicas y comportamentales de manera confiable y válida para procesos de selección y desarrollo.</p>
+                        <h4>Solución</h4>
+                        <ul>
+                            <li>Diseño, construcción y validación de instrumentos para la evaluación de aptitudes, conocimientos y competencias comportamentales</li>
+                            <li>Evaluación de desempeño con metodologías científicas</li>
+                            <li>Medición y evaluación de clima y cultura organizacional</li>
+                            <li>Medición de riesgo psicosocial</li>
+                            <li>Procesamiento, análisis psicométrico e interpretación de resultados de encuestas, pruebas e instrumentos de evaluación de atributos</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Selección de Personal</h3>
+                        <p>Procesos integrales de selección y reclutamiento</p>
                     </div>
-                    <h3>Selección de Personal</h3>
-                    <p>Diseño y ejecución de procesos de selección de personal del orden local y nacional.</p>
-                    <ul>
-                        <li>Diseño y ejecución de procesos de selección de personal del orden local y nacional.</li>
-                        <li>Selección de ejecutivos, gerentes y directivos.</li>
-                        <li>Selección interna (ascensos, convocatorias cerradas).</li>
-                    </ul>
+                    <div class="case-content">
+                        <h4>Desafío</h4>
+                        <p>Las empresas requieren procesos de selección eficientes y efectivos que garanticen la contratación del talento adecuado para cada posición.</p>
+                        <h4>Solución</h4>
+                        <ul>
+                            <li>Diseño y ejecución de procesos de selección de personal del orden local y nacional</li>
+                            <li>Selección de ejecutivos, gerentes y directivos con metodologías especializadas</li>
+                            <li>Selección interna (ascensos, convocatorias cerradas) para desarrollo interno</li>
+                            <li>Evaluación integral de competencias técnicas y comportamentales</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-sitemap"></i>
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Organización del Trabajo</h3>
+                        <p>Optimización de estructuras y procesos organizacionales</p>
                     </div>
-                    <h3>Organización del Trabajo</h3>
-                    <p>Rediseño institucional y análisis de procesos para optimizar la estructura organizacional.</p>
-                    <ul>
-                        <li>Rediseño institucional.</li>
-                        <li>Análisis de procesos y procedimientos.</li>
-                        <li>Estudios de cargas de trabajo.</li>
-                        <li>Diseño y rediseño de puestos de trabajo y perfiles.</li>
-                        <li>Definición de mapas funcionales.</li>
-                        <li>Elaboración y actualización de manual de funciones.</li>
-                    </ul>
+                    <div class="case-content">
+                        <h4>Desafío</h4>
+                        <p>Organizaciones necesitan estructuras eficientes y procesos optimizados para maximizar la productividad y el rendimiento organizacional.</p>
+                        <h4>Solución</h4>
+                        <ul>
+                            <li>Rediseño institucional para mejorar la eficiencia organizacional</li>
+                            <li>Análisis de procesos y procedimientos para identificar oportunidades de mejora</li>
+                            <li>Estudios de cargas de trabajo para optimizar la distribución de responsabilidades</li>
+                            <li>Diseño y rediseño de puestos de trabajo y perfiles</li>
+                            <li>Definición de mapas funcionales para clarificar roles y responsabilidades</li>
+                            <li>Elaboración y actualización de manual de funciones</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Formación y Desarrollo</h3>
+                        <p>Programas de desarrollo por competencias</p>
                     </div>
-                    <h3>Formación y Desarrollo</h3>
-                    <p>Formulación, diseño e implementación de programas de formación por competencias.</p>
-                    <ul>
-                        <li>Formulación, diseño e implementación de programas de formación (por competencias, habilidades, actitudes).</li>
-                        <li>Evaluación de impacto de programas de formación y desarrollo.</li>
-                        <li>Inducción y reinducción.</li>
-                        <li>Formación en habilidades gerenciales, trabajo en equipo, formación en liderazgo y demás competencias orientadas hacia el desarrollo organizacional.</li>
-                    </ul>
+                    <div class="case-content">
+                        <h4>Desafío</h4>
+                        <p>Las organizaciones necesitan desarrollar el talento interno y formar líderes capaces de impulsar el crecimiento y la innovación.</p>
+                        <h4>Solución</h4>
+                        <ul>
+                            <li>Formulación, diseño e implementación de programas de formación (por competencias, habilidades, actitudes)</li>
+                            <li>Evaluación de impacto de programas de formación y desarrollo</li>
+                            <li>Inducción y reinducción para facilitar la integración del personal</li>
+                            <li>Formación en habilidades gerenciales, trabajo en equipo, formación en liderazgo y demás competencias orientadas hacia el desarrollo organizacional</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Gestión del Conocimiento</h3>
+                        <p>Estrategias para el desarrollo del conocimiento organizacional</p>
                     </div>
-                    <h3>Gestión del Conocimiento</h3>
-                    <p>Apoyo en la formulación e implementación de estrategias organizacionales para el desarrollo del conocimiento.</p>
-                    <ul>
-                        <li>Apoyo en la formulación de estrategia organizacional para el desarrollo, adquisición y aplicación del conocimiento.</li>
-                        <li>Apoyo en la implementación de estrategias orientadas al conocimiento.</li>
-                        <li>Diseño de procesos e instrumentos para seguimiento y evaluación de logros obtenidos mediante la aplicación del conocimiento.</li>
-                    </ul>
+                    <div class="case-content">
+                        <h4>Desafío</h4>
+                        <p>Las organizaciones necesitan capturar, compartir y aplicar el conocimiento interno para mantener ventajas competitivas y fomentar la innovación.</p>
+                        <h4>Solución</h4>
+                        <ul>
+                            <li>Apoyo en la formulación de estrategia organizacional para el desarrollo, adquisición y aplicación del conocimiento</li>
+                            <li>Apoyo en la implementación de estrategias orientadas al conocimiento</li>
+                            <li>Diseño de procesos e instrumentos para seguimiento y evaluación de logros obtenidos mediante la aplicación del conocimiento</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chess"></i>
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Apoyo al Direccionamiento Estratégico</h3>
+                        <p>Asesoría en estrategias organizacionales</p>
                     </div>
-                    <h3>Apoyo al Direccionamiento Estratégico</h3>
-                    <p>Asesoría en la formulación e implementación de estrategias organizacionales.</p>
-                    <ul>
-                        <li>Asesoría en la formulación de planes estratégicos.</li>
-                        <li>Apoyo en la implementación de estrategias organizacionales.</li>
-                        <li>Evaluación de impacto de iniciativas estratégicas.</li>
-                        <li>Desarrollo de indicadores de gestión estratégica.</li>
-                    </ul>
+                    <div class="case-content">
+                        <h4>Desafío</h4>
+                        <p>Las organizaciones requieren orientación experta para formular e implementar estrategias que garanticen el crecimiento sostenible y la competitividad.</p>
+                        <h4>Solución</h4>
+                        <ul>
+                            <li>Asesoría en la formulación de planes estratégicos</li>
+                            <li>Apoyo en la implementación de estrategias organizacionales</li>
+                            <li>Evaluación de impacto de iniciativas estratégicas</li>
+                            <li>Desarrollo de indicadores de gestión estratégica</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
