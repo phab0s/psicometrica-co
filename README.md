@@ -41,7 +41,7 @@ WEB/
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/tu-usuario/psicometrica-website.git
+   git remote add origin https://github.com/phab0s/psicometrica-co.git
    git push -u origin main
    ```
 
