@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes - PsicoMétrica Consultores S.A.S</title>
     <meta name="description" content="Conoce algunos de nuestros clientes satisfechos y casos de éxito en evaluación psicométrica y desarrollo organizacional.">
-    <meta name="keywords" content="clientes, casos de éxito, testimonios, evaluación psicométrica, desarrollo organizacional">
+    <meta name="keywords" content="clientes, casos de éxito, evaluación psicométrica, desarrollo organizacional">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/android-chrome-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/android-chrome-96x96.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* Importar fuente Lato de Google Fonts */
@@ -224,87 +227,16 @@
             font-weight: 600;
         }
 
-        /* Testimonials Section */
-        .testimonials-section {
+        /* Case Studies Section */
+        .cases-section {
             padding: 5rem 0;
-            background: var(--gris-claro);
+            background: var(--blanco);
         }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--blanco);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
-            color: var(--verde-vibrante);
-            font-family: serif;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            color: var(--gris-oscuro);
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--azul-marino), var(--verde-vibrante));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blanco);
-            font-weight: bold;
-        }
-
-        .author-info h4 {
-            margin: 0;
-            font-size: 1.1rem;
-        }
-
-        .author-info p {
-            margin: 0;
-            color: var(--gris-oscuro);
-            font-size: 0.9rem;
-        }
-
-        /* Case Studies Section */
-        .cases-section {
-            padding: 5rem 0;
-            background: var(--blanco);
         }
 
         .cases-grid {
@@ -319,6 +251,8 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .case-card:hover {
@@ -329,21 +263,29 @@
             background: linear-gradient(135deg, var(--azul-marino), var(--verde-vibrante));
             color: var(--blanco);
             padding: 1.5rem;
-            text-align: center;
         }
 
         .case-header h3 {
             color: var(--blanco);
             margin-bottom: 0.5rem;
+            font-size: 1.25rem;
         }
 
         .case-header p {
             opacity: 0.9;
             margin: 0;
+            font-size: 0.9rem;
+            font-style: italic;
         }
 
         .case-content {
             padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .case-content p {
+            margin-bottom: 1rem;
+            color: var(--texto-principal);
         }
 
         .case-content h4 {
@@ -437,6 +379,15 @@
             color: var(--verde-vibrante);
         }
 
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
         .footer-bottom {
             border-top: 1px solid var(--gris-oscuro);
             padding-top: 1rem;
@@ -470,10 +421,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
             .cases-grid {
                 grid-template-columns: 1fr;
             }
@@ -503,7 +450,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav-container">
             <div class="logo">
@@ -524,15 +470,13 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Nuestros Clientes</h1>
-            <p>Organizaciones que confían en nuestros servicios de evaluación psicométrica y desarrollo organizacional</p>
+            <p>Organizaciones y entidades que confían en nuestros servicios de evaluación psicométrica y desarrollo organizacional</p>
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
@@ -556,155 +500,70 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "PsicoMétrica Consultores transformó completamente nuestro proceso de selección de personal. Sus evaluaciones psicométricas nos han permitido identificar candidatos con el perfil exacto que necesitamos."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h4>María González</h4>
-                            <p>Directora de RRHH - Empresa Industrial</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "La implementación de sus programas de formación y desarrollo ha mejorado significativamente el rendimiento de nuestro equipo. Los resultados son evidentes en la productividad y satisfacción laboral."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">C</div>
-                        <div class="author-info">
-                            <h4>Carlos Rodríguez</h4>
-                            <p>Gerente General - Consultora Financiera</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Su trabajo en la reorganización de nuestra estructura ha sido fundamental para optimizar procesos y mejorar la eficiencia operativa. Altamente recomendados."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <h4>Ana Martínez</h4>
-                            <p>CEO - Startup Tecnológica</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "La evaluación psicométrica que realizaron para nuestro proceso de ascensos fue muy profesional y nos dio resultados confiables para tomar decisiones estratégicas."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">L</div>
-                        <div class="author-info">
-                            <h4>Luis Pérez</h4>
-                            <p>Director de Operaciones - Empresa de Servicios</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Su enfoque en la gestión del conocimiento nos ha ayudado a crear una cultura de aprendizaje continuo. El impacto en la innovación de la empresa ha sido notable."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">P</div>
-                        <div class="author-info">
-                            <h4>Patricia Silva</h4>
-                            <p>Directora de Innovación - Corporación Multinacional</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Excelente trabajo en el diseño de instrumentos psicométricos personalizados para nuestro sector. La validación y confiabilidad de sus herramientas es excepcional."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">R</div>
-                        <div class="author-info">
-                            <h4>Roberto Torres</h4>
-                            <p>Gerente de Talento - Empresa de Salud</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies Section -->
     <section class="cases-section">
         <div class="container">
-            <h2 class="section-title">Casos de Éxito</h2>
+            <h2 class="section-title">Nuestro Portafolio de Clientes</h2>
             <div class="cases-grid">
+                
                 <div class="case-card">
                     <div class="case-header">
-                        <h3>Evaluación Psicométrica</h3>
-                        <p>Empresa Industrial - 500 empleados</p>
+                        <h3>ALCALDÍA MUNICIPAL DE SOACHA</h3>
+                        <p>Prestación de servicios profesionales para el apoyo en la realización de concurso interno para proveer vacantes.</p>
                     </div>
                     <div class="case-content">
-                        <h4>Desafío</h4>
-                        <p>Necesitaban evaluar competencias técnicas y comportamentales para procesos de selección masiva.</p>
-                        <h4>Solución</h4>
-                        <ul>
-                            <li>Diseño de batería psicométrica personalizada</li>
-                            <li>Evaluación de 200 candidatos en 3 meses</li>
-                            <li>Reducción del 40% en tiempo de contratación</li>
-                            <li>Mejora del 60% en retención de personal</li>
-                        </ul>
+                        <p>PsicoMétrica Consultores brindó un soporte integral a la Alcaldía de Soacha para la ejecución de su concurso interno destinado a proveer cargos mediante la figura de encargo. Nuestra consultoría abarcó todas las fases del proceso de selección, iniciando con la verificación de la idoneidad y los antecedentes de los aspirantes.</p>
+                        <p>Fuimos responsables del <strong>diseño técnico de la evaluación</strong>, incluyendo la estructuración de los ejes temáticos y la consolidación de un banco de preguntas. Adicionalmente, gestionamos toda la logística para la aplicación de las pruebas, su calificación y el acompañamiento en reclamaciones, garantizando un <strong>proceso de selección transparente, objetivo y con el más alto rigor técnico</strong>.</p>
                     </div>
                 </div>
 
                 <div class="case-card">
                     <div class="case-header">
-                        <h3>Desarrollo Organizacional</h3>
-                        <p>Startup Tecnológica - 50 empleados</p>
+                        <h3>MANPOWER PROFESSIONAL LTDA.</h3>
+                        <p>Consultoría para la construcción y ensamble de 177 pruebas de conocimientos cerradas.</p>
                     </div>
                     <div class="case-content">
-                        <h4>Desafío</h4>
-                        <p>Necesitaban estructurar procesos de trabajo y definir roles en crecimiento acelerado.</p>
-                        <h4>Solución</h4>
-                        <ul>
-                            <li>Rediseño de estructura organizacional</li>
-                            <li>Definición de perfiles y responsabilidades</li>
-                            <li>Implementación de procesos de comunicación</li>
-                            <li>Aumento del 35% en productividad</li>
-                        </ul>
+                        <p>En colaboración con Manpower, ejecutamos un proyecto de alta envergadura para el diseño de 177 pruebas de conocimientos específicos. Aplicando un <strong>riguroso enfoque psicométrico</strong>, nuestro equipo definió los componentes de evaluación, estructuró las pruebas y desarrolló un extenso banco de preguntas a la medida.</p>
+                        <p>El proyecto culminó con la entrega de 177 cuadernillos de prueba, sus hojas de respuesta y un banco de preguntas con justificación técnica. Este trabajo proporcionó a Manpower una <strong>solución de evaluación robusta, confiable y científicamente validada</strong>, permitiéndoles ejecutar procesos de selección masivos con un alto grado de objetividad y eficacia.</p>
                     </div>
                 </div>
 
                 <div class="case-card">
                     <div class="case-header">
-                        <h3>Formación y Desarrollo</h3>
-                        <p>Consultora Financiera - 150 empleados</p>
+                        <h3>UNIVERSIDAD NACIONAL DE COLOMBIA</h3>
+                        <p>Asesoría técnica para el diseño y aplicación de pruebas para cargos de Tribunales, Juzgados y Centros de Servicios.</p>
                     </div>
                     <div class="case-content">
-                        <h4>Desafío</h4>
-                        <p>Requerían desarrollar habilidades de liderazgo y trabajo en equipo en mandos medios.</p>
-                        <h4>Solución</h4>
-                        <ul>
-                            <li>Programa de formación por competencias</li>
-                            <li>Evaluación de impacto pre y post</li>
-                            <li>Coaching individual y grupal</li>
-                            <li>Mejora del 45% en satisfacción laboral</li>
-                        </ul>
+                        <p>Fuimos seleccionados como asesor técnico experto para un proyecto estratégico de gran escala para el Consejo Superior de la Judicatura. Aportamos nuestra experiencia en la <strong>construcción de pruebas de conocimientos, competencias y psicotécnicas</strong>, asegurando la validez y pertinencia de los instrumentos.</p>
+                        <p>Nuestra asesoría acompañó todo el ciclo de vida del proyecto, desde la revisión de bancos de preguntas hasta el soporte en la aplicación a nivel nacional. Participamos en la coordinación con el Consejo Superior de la Judicatura y en la <strong>validación final de los logros</strong>, garantizando la integridad y el éxito técnico de este importante proceso para la Rama Judicial.</p>
                     </div>
                 </div>
+                
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>ADIDAS COLOMBIA</h3>
+                        <p>Diseño y análisis de un instrumento de evaluación multifactorial de actividad física de los empleados.</p>
+                    </div>
+                    <div class="case-content">
+                        <p>Lideramos una iniciativa estratégica de bienestar corporativo, centrada en caracterizar los niveles de actividad física, ejercicio y deporte de sus empleados. Diseñamos un <strong>instrumento de evaluación multifactorial a la medida</strong> para obtener un perfil detallado de la autopercepción de salud y hábitos.</p>
+                        <p>El proyecto incluyó la gestión logística para la aplicación online y un profundo <strong>análisis psicométrico y estadístico</strong>. Entregamos a Adidas un informe final con hallazgos y recomendaciones, ofreciendo una base sólida y basada en evidencia para desarrollar programas de bienestar que impacten positivamente en la productividad y calidad de vida de su equipo.</p>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Universidad Distrital Francisco José de Caldas</h3>
+                        <p>Construcción y validación de un banco de preguntas para la selección del Secretario General del Concejo de Mosquera.</p>
+                    </div>
+                    <div class="case-content">
+                        <p>Desarrollamos un instrumento de evaluación de conocimientos altamente especializado. Basándonos en las competencias críticas del cargo, <strong>diseñamos y validamos un exhaustivo banco de preguntas</strong> que cubrió todas las áreas de conocimiento indispensables para el rol, garantizando una evaluación integral y pertinente.</p>
+                        <p>El instrumento fue estructurado para medir el dominio en áreas clave como Derecho Administrativo, Contratación Estatal y gestión financiera. El resultado fue una <strong>herramienta de selección objetiva y rigurosa</strong>, que permitió identificar al candidato con el perfil más idóneo para asumir las responsabilidades del cargo.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <h2>¿Quieres Ser Nuestro Próximo Caso de Éxito?</h2>
@@ -713,7 +572,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -759,17 +617,18 @@
         
         const animateStats = () => {
             stats.forEach(stat => {
-                const target = parseInt(stat.textContent);
+                const target = parseInt(stat.textContent.replace(/[^0-9]/g, ''));
+                const suffix = stat.textContent.replace(/[0-9]/g, '');
                 const increment = target / 50;
                 let current = 0;
                 
                 const updateStat = () => {
                     if (current < target) {
                         current += increment;
-                        stat.textContent = Math.ceil(current) + (stat.textContent.includes('+') ? '+' : '') + (stat.textContent.includes('%') ? '%' : '');
+                        stat.textContent = Math.ceil(current) + suffix;
                         requestAnimationFrame(updateStat);
                     } else {
-                        stat.textContent = target + (stat.textContent.includes('+') ? '+' : '') + (stat.textContent.includes('%') ? '%' : '');
+                        stat.textContent = target + suffix;
                     }
                 };
                 
@@ -778,14 +637,16 @@
         };
 
         // Trigger animation when stats section is visible
+        let hasAnimated = false;
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !hasAnimated) {
                     animateStats();
+                    hasAnimated = true;
                     observer.unobserve(entry.target);
                 }
             });
-        });
+        }, { threshold: 0.5 });
 
         const statsSection = document.querySelector('.stats-section');
         if (statsSection) {
