@@ -268,59 +268,7 @@
             color: var(--gris-oscuro);
         }
 
-        /* Team Section */
-        .team-section {
-            padding: 5rem 0;
-            background: var(--blanco);
-        }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .team-card {
-            background: var(--gris-claro);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .team-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .team-photo {
-            height: 200px;
-            background: linear-gradient(135deg, var(--azul-marino), var(--verde-vibrante));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blanco);
-            font-size: 3rem;
-        }
-
-        .team-info {
-            padding: 1.5rem;
-        }
-
-        .team-info h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-info .position {
-            color: var(--verde-vibrante);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .team-info p {
-            color: var(--gris-oscuro);
-            font-size: 0.9rem;
-        }
 
         /* CTA Section */
         .cta-section {
@@ -427,9 +375,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
+
         }
 
         @media (max-width: 480px) {
@@ -537,44 +483,7 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="container">
-            <h2 class="section-title">Nuestro Equipo</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-photo">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Carlos Mendoza</h3>
-                        <div class="position">Director General</div>
-                        <p>Psicólogo con especialización en Psicometría y más de 15 años de experiencia en evaluación organizacional.</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <div class="team-info">
-                        <h3>Dra. Ana Rodríguez</h3>
-                        <div class="position">Directora de Investigación</div>
-                        <p>Especialista en diseño y validación de instrumentos psicométricos con maestría en Psicología Organizacional.</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">
-                        <i class="fas fa-user-cog"></i>
-                    </div>
-                    <div class="team-info">
-                        <h3>Ing. Luis Torres</h3>
-                        <div class="position">Director de Proyectos</div>
-                        <p>Ingeniero Industrial con especialización en Gestión Humana y más de 10 años en consultoría organizacional.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- CTA Section -->
     <section class="cta-section">
