@@ -210,18 +210,111 @@
             gap: 2rem;
         }
 
+        /* Animación de entrada para las tarjetas */
+        .case-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .case-card:nth-child(1) { animation-delay: 0.1s; }
+        .case-card:nth-child(2) { animation-delay: 0.2s; }
+        .case-card:nth-child(3) { animation-delay: 0.3s; }
+        .case-card:nth-child(4) { animation-delay: 0.4s; }
+        .case-card:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .case-card {
             background: var(--gris-claro);
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Borde sutil que aparece en hover */
+        .case-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--azul-marino), var(--verde-vibrante));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .case-card:hover::before {
+            opacity: 1;
         }
 
         .case-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Animación del logo en hover */
+        .case-card:hover .client-logo img {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        /* Transiciones suaves para todos los elementos */
+        .case-card,
+        .case-card .client-logo img {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Efecto de brillo en el header al hacer hover */
+        .case-card:hover .case-header {
+            background: linear-gradient(135deg, var(--azul-marino) 0%, var(--verde-vibrante) 50%, var(--azul-marino) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 2s ease infinite;
+        }
+
+        /* Animación del gradiente */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efecto de pulso sutil en el logo */
+        .client-logo img {
+            position: relative;
+        }
+
+        .case-card:hover .client-logo img::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: translate(-50%, -50%) scale(1.5);
+            animation: pulse 1.5s ease-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.3); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
         }
 
         .case-header {
@@ -408,10 +501,93 @@
                 font-size: 2rem;
             }
 
-
-
             .cases-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Ajustes para móvil en las tarjetas */
+            .case-card {
+                margin: 0 1rem;
+            }
+
+            .case-header {
+                padding: 1rem;
+            }
+
+            .client-logo img {
+                width: 140px;
+                height: 100px;
+            }
+
+            /* Escudos universitarios en móvil */
+            .client-logo img[src*="unal"],
+            .client-logo img[src*="udistrital"] {
+                width: 160px;
+                height: 120px;
+            }
+
+            /* Reducir efectos de hover en móvil para mejor rendimiento */
+            .case-card:hover {
+                transform: translateY(-4px);
+            }
+
+            .case-card:hover .client-logo img {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .case-header p {
+                font-size: 1rem;
+            }
+
+            .client-logo img {
+                width: 120px;
+                height: 90px;
+            }
+
+            .client-logo img[src*="unal"],
+            .client-logo img[src*="udistrital"] {
+                width: 140px;
+                height: 100px;
+            }
+        }
+
+        /* Efectos adicionales para pantallas táctiles */
+        @media (hover: none) and (pointer: coarse) {
+            .case-card:active {
+                transform: translateY(-4px);
+            }
+
+            .case-card:active .client-logo img {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Optimización para pantallas de alta resolución */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .case-card {
+                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            }
+
+            .case-card:hover {
+                box-shadow: 0 8px 30px rgba(0,0,0,0.12);
             }
         }
 
@@ -506,7 +682,7 @@
                         <div class="client-logo">
                             <img src="/assets/adidas.png" alt="Logo Adidas" class="invert">
                         </div>
-                                                 <p>Colaboración continua en iniciativas de bienestar corporativo y evaluación del capital humano, incluyendo instrumentos de evaluación multifactorial, análisis psicométrico y consultoría en programas de desarrollo organizacional.</p>
+                                                 <p>Colaboración en iniciativas de bienestar corporativo y evaluación del capital humano, incluyendo instrumentos de evaluación multifactorial, análisis psicométrico y consultoría en programas de desarrollo organizacional.</p>
                     </div>
                     
                 </div>
