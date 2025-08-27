@@ -215,7 +215,7 @@
 
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             max-width: 900px;
             margin: 0 auto;
@@ -365,6 +365,11 @@
         .whatsapp-contact {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            justify-self: center;
+            align-self: center;
+            min-height: 120px;
         }
 
         .whatsapp-contact:hover {
@@ -406,6 +411,14 @@
             .contact-methods {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+            }
+
+            .whatsapp-contact {
+                grid-column: 1;
+                grid-row: auto;
+                justify-self: stretch;
+                align-self: auto;
+                min-height: auto;
             }
 
             .whatsapp-float {
@@ -511,16 +524,6 @@
                         </div>
                     </div>
                     
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Horario de Atención</h3>
-                            <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
-                        </div>
-                    </div>
-                    
                     <a href="https://wa.me/573102594866?text=Hola,%20me%20interesan%20sus%20servicios%20de%20evaluación%20psicométrica" target="_blank" rel="noopener noreferrer" class="contact-method whatsapp-contact">
                         <div class="contact-icon">
                             <i class="fab fa-whatsapp"></i>
@@ -530,6 +533,16 @@
                             <p>Chatea con nosotros directamente</p>
                         </div>
                     </a>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
