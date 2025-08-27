@@ -254,6 +254,11 @@
             width: auto;
             height: auto;
             object-fit: contain;
+            filter: none; /* Todos sin filtro por defecto */
+        }
+
+        /* Solo Adidas y Manpower en blanco/invertido */
+        .client-logo img.invert {
             filter: brightness(0) invert(1);
         }
 
@@ -476,7 +481,7 @@
                 <div class="case-card">
                     <div class="case-header">
                         <div class="client-logo">
-                            <img src="/assets/manpower.png" alt="Logo Manpower">
+                            <img src="/assets/manpower.png" alt="Logo Manpower" class="invert">
                         </div>
                         <h3>MANPOWER PROFESSIONAL LTDA.</h3>
                         <p>Consultoría para la construcción y ensamble de 177 pruebas de conocimientos cerradas.</p>
@@ -504,7 +509,7 @@
                 <div class="case-card">
                     <div class="case-header">
                         <div class="client-logo">
-                            <img src="/assets/adidas.png" alt="Logo Adidas">
+                            <img src="/assets/adidas.png" alt="Logo Adidas" class="invert">
                         </div>
                         <h3>ADIDAS COLOMBIA</h3>
                         <p>Diseño y análisis de un instrumento de evaluación multifactorial de actividad física de los empleados.</p>
