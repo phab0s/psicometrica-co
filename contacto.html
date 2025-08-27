@@ -196,11 +196,10 @@
             background: var(--blanco);
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .contact-info h2 {
@@ -210,14 +209,16 @@
 
         .contact-info p {
             font-size: 1.1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             color: var(--gris-oscuro);
         }
 
         .contact-methods {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .contact-method {
@@ -250,79 +251,6 @@
             color: var(--gris-oscuro);
             margin: 0;
         }
-
-        /* Form */
-        .contact-form {
-            background: var(--gris-claro);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--azul-marino);
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--gris-medio);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-            background: var(--blanco);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--verde-vibrante);
-            box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .submit-btn {
-            background: var(--verde-vibrante);
-            color: var(--blanco);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
-        }
-
-        .submit-btn:hover {
-            background: var(--verde-suave);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4);
-        }
-
-
 
         /* Footer */
         .footer {
@@ -475,17 +403,9 @@
                 font-size: 1rem;
             }
 
-            .contact-grid {
+            .contact-methods {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form {
-                padding: 1.5rem;
+                gap: 1rem;
             }
 
             .whatsapp-float {
@@ -556,111 +476,60 @@
     <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Hablemos de tu Proyecto</h2>
-                    <p>¿Tienes alguna consulta sobre nuestros servicios? ¿Necesitas una propuesta personalizada? No dudes en contactarnos. Nuestro equipo de especialistas está listo para ayudarte.</p>
-                    
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <p>info@psicometrica.co</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Teléfono</h3>
-                                <p>+57 (1) 310-2594866</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Dirección</h3>
-                                <p>Bogotá, Colombia</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Horario de Atención</h3>
-                                <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
-                            </div>
-                        </div>
-                        
-                        <a href="https://wa.me/573102594866?text=Hola,%20me%20interesan%20sus%20servicios%20de%20evaluación%20psicométrica" target="_blank" rel="noopener noreferrer" class="contact-method whatsapp-contact">
-                            <div class="contact-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>WhatsApp</h3>
-                                <p>Chatea con nosotros directamente</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+            <div class="contact-info">
+                <h2>Hablemos de tu Proyecto</h2>
+                <p>¿Tienes alguna consulta sobre nuestros servicios? ¿Necesitas una propuesta personalizada? No dudes en contactarnos. Nuestro equipo de especialistas está listo para ayudarte.</p>
                 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nombre">Nombre Completo *</label>
-                                <input type="text" id="nombre" name="nombre" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="empresa">Empresa</label>
-                                <input type="text" id="empresa" name="empresa">
-                            </div>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono">
-                            </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>info@psicometrica.co</p>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="servicio">Servicio de Interés</label>
-                            <select id="servicio" name="servicio">
-                                <option value="">Selecciona un servicio</option>
-                                <option value="evaluacion-psicometrica">Evaluación Psicométrica</option>
-                                <option value="seleccion-personal">Selección de Personal</option>
-                                <option value="organizacion-trabajo">Organización del Trabajo</option>
-                                <option value="formacion-desarrollo">Formación y Desarrollo</option>
-                                <option value="gestion-conocimiento">Gestión del Conocimiento</option>
-                                <option value="direccionamiento-estrategico">Apoyo al Direccionamiento Estratégico</option>
-                                <option value="otro">Otro</option>
-                            </select>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje *</label>
-                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto o consulta..." required></textarea>
+                        <div class="contact-details">
+                            <h3>Teléfono</h3>
+                            <p>+57 (1) 310-2594866</p>
                         </div>
-                        
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                        </button>
-                    </form>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Dirección</h3>
+                            <p>Bogotá, Colombia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/573102594866?text=Hola,%20me%20interesan%20sus%20servicios%20de%20evaluación%20psicométrica" target="_blank" rel="noopener noreferrer" class="contact-method whatsapp-contact">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>WhatsApp</h3>
+                            <p>Chatea con nosotros directamente</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -715,37 +584,6 @@
 
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-        });
-
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would typically send the data to your server
-            // For now, we'll just show a success message
-            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Form validation
-        const inputs = document.querySelectorAll('input[required], textarea[required]');
-        
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.value.trim() === '') {
-                    this.style.borderColor = '#e53e3e';
-                } else {
-                    this.style.borderColor = '#e2e8f0';
-                }
-            });
         });
     </script>
 </body>
