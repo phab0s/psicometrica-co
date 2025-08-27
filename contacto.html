@@ -14,6 +14,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         /* Importar fuente Lato de Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
@@ -357,6 +360,103 @@
             color: var(--gris-medio);
         }
 
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1001;
+            animation: whatsapp-pulse 2s infinite;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            font-size: 2rem;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float .tooltip {
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--azul-marino);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float .tooltip::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-left: 8px solid var(--azul-marino);
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .whatsapp-float:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            70% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        /* WhatsApp Contact Method */
+        .whatsapp-contact {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .whatsapp-contact:hover {
+            transform: translateX(10px) scale(1.02);
+        }
+
+        .whatsapp-contact .contact-icon {
+            color: white;
+        }
+
+        .whatsapp-contact .contact-details h3,
+        .whatsapp-contact .contact-details p {
+            color: white;
+        }
+
+        .whatsapp-contact {
+            text-decoration: none;
+            display: block;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-menu {
@@ -386,6 +486,21 @@
 
             .contact-form {
                 padding: 1.5rem;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float a {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .whatsapp-float .tooltip {
+                display: none;
             }
         }
 
@@ -486,6 +601,16 @@
                                 <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
                             </div>
                         </div>
+                        
+                        <a href="https://wa.me/573102594866?text=Hola,%20me%20interesan%20sus%20servicios%20de%20evaluación%20psicométrica" target="_blank" rel="noopener noreferrer" class="contact-method whatsapp-contact">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>WhatsApp</h3>
+                                <p>Chatea con nosotros directamente</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 
@@ -574,6 +699,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/573102594866?text=Hola,%20me%20interesan%20sus%20servicios%20de%20evaluación%20psicométrica" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            <div class="tooltip">¡Chatea con nosotros en WhatsApp!</div>
+        </a>
+    </div>
 
     <script>
         // Mobile menu toggle
