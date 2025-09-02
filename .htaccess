@@ -1,0 +1,52 @@
+RewriteEngine On
+
+# Permitir acceso directo a archivos existentes
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Permitir acceso directo a directorios existentes
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirigir /nosotros a nosotros.html
+RewriteRule ^nosotros/?$ nosotros.html [L]
+
+# Redirigir /soluciones a soluciones.html
+RewriteRule ^soluciones/?$ soluciones.html [L]
+
+# Redirigir /clientes a clientes.html
+RewriteRule ^clientes/?$ clientes.html [L]
+
+# Redirigir /contacto a contacto.html
+RewriteRule ^contacto/?$ contacto.html [L]
+
+# Si no es ninguno de los anteriores, redirigir a index.html
+RewriteRule ^(.*)$ index.html [L]
+
+# Configuraciones adicionales para mejorar el rendimiento
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType font/ttf "access plus 1 month"
+    ExpiresByType font/woff "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
+</IfModule>
+
+# Compresión GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
