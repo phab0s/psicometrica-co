@@ -1,160 +1,71 @@
 # PsicoMétrica Consultores S.A.S
 
-Sitio web moderno y profesional para PsicoMétrica Consultores, especialistas en evaluación psicométrica y desarrollo organizacional.
+Sitio web corporativo de PsicoMétrica Consultores, especialistas en evaluación psicométrica y desarrollo organizacional en Colombia.
 
-## 🎨 Características del Diseño
+## 🛠️ Tecnologías
 
-### Paleta de Colores
-- **Azul Marino Oscuro** `#1a365d` - Color principal del logo
-- **Verde Vibrante** `#38a169` - Color de acento del logo
-- **Negro Profundo** `#000000` - Para fondos y elementos de contraste
-- **Blanco Puro** `#ffffff` - Para textos sobre fondos oscuros
-- **Gris Claro** `#f7fafc` - Para fondos alternos
-
-### Tipografías
-- **Inter** - Para títulos y encabezados
-- **Source Sans Pro** - Para cuerpo de texto
+- **HTML + CSS + JavaScript puro** — sin frameworks ni proceso de build
+- **CSS compartido** en `assets/styles.css` (base común de todas las páginas) + estilos específicos por página en cada HTML
+- **JavaScript compartido** en `assets/main.js` (menú móvil)
+- **Tipografía**: Lato (Google Fonts) · **Íconos**: Font Awesome 6.4 (CDN)
 
 ## 📁 Estructura del Proyecto
 
 ```
 WEB/
-├── index.html          # Página principal
-├── nosotros.html       # Página Nosotros
-├── soluciones.html     # Página Soluciones
-├── clientes.html       # Página Clientes
-├── contacto.html       # Página Contacto
-├── favicon.ico         # Favicon
-├── apple-touch-icon.png
-├── favicon-32x32.png
-├── favicon-16x16.png
-└── README.md          # Este archivo
+├── index.html                  # Página principal
+├── nosotros.html               # Nosotros
+├── soluciones.html             # Soluciones
+├── clientes.html               # Clientes
+├── contacto.html               # Contacto (WhatsApp, email, teléfono)
+├── calculadora-ejemplo-vm.html # Demo: calculadora de costos (noindex)
+├── 404.html                    # Página de error personalizada
+├── assets/
+│   ├── styles.css              # Estilos compartidos del sitio
+│   ├── main.js                 # JS compartido (menú móvil)
+│   └── *.png / *.webp          # Logo e imágenes
+├── .htaccess                   # URLs limpias, caché, gzip, 404
+├── Dockerfile                  # Imagen PHP 8.2 + Apache para Render
+├── robots.txt
+└── sitemap.xml
 ```
 
-## 🚀 Despliegue en Netlify
+## 🎨 Diseño
 
-### Opción 1: Despliegue Directo desde GitHub
+La paleta y tipografía se definen como variables CSS en `assets/styles.css`:
 
-1. **Sube el código a GitHub:**
+- **Azul marino** `#1E3A8A` — color principal (headers, títulos, footer)
+- **Verde vibrante** `#10B981` — color de acento (CTA, hover, íconos)
+- Fondos claros `#F8FAFC` / `#F1F5F9` para secciones alternas
+- Fuente **Lato**
+
+Sitio responsive con breakpoints en 768px y 480px. El menú móvil se despliega
+con el botón hamburguesa (gestionado por `assets/main.js`).
+
+## 🚀 Despliegue (Render)
+
+El sitio se sirve desde un contenedor **PHP 8.2 + Apache** definido en el `Dockerfile`:
+
+1. Haz commit y push a `main`:
    ```bash
-   git init
    git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/phab0s/psicometrica-co.git
-   git push -u origin main
+   git commit -m "Descripción del cambio"
+   git push origin main
    ```
+2. Render reconstruye y despliega automáticamente (si tienes Auto-Deploy activado; si no, usa *Manual Deploy → Deploy latest commit*).
 
-2. **Conecta con Netlify:**
-   - Ve a [netlify.com](https://netlify.com)
-   - Crea una cuenta o inicia sesión
-   - Haz clic en "New site from Git"
-   - Selecciona tu repositorio de GitHub
-   - Configura las opciones de build (no necesarias para sitios estáticos)
-   - Haz clic en "Deploy site"
+El `.htaccess` proporciona:
 
-### Opción 2: Despliegue Manual
+- **URLs limpias**: `/nosotros`, `/soluciones`, `/clientes`, `/contacto`, `/calculadora-ejemplo-vm`
+- **Página 404 personalizada** (`404.html`)
+- **Compresión GZIP** y **cabeceras de caché** para CSS, JS, imágenes y fuentes
 
-1. **Prepara los archivos:**
-   - Asegúrate de que todos los archivos HTML estén en la raíz del proyecto
-   - Verifica que las rutas de los favicons sean correctas
+## 📞 Contacto del sitio
 
-2. **Sube a Netlify:**
-   - Ve a [netlify.com](https://netlify.com)
-   - Arrastra y suelta la carpeta del proyecto en el área de deploy
-   - Netlify automáticamente detectará que es un sitio estático
-
-### Opción 3: Usando Netlify CLI
-
-1. **Instala Netlify CLI:**
-   ```bash
-   npm install -g netlify-cli
-   ```
-
-2. **Inicia sesión:**
-   ```bash
-   netlify login
-   ```
-
-3. **Despliega:**
-   ```bash
-   netlify deploy
-   ```
-
-4. **Publica el sitio:**
-   ```bash
-   netlify deploy --prod
-   ```
-
-## ⚙️ Configuración Adicional
-
-### Dominio Personalizado
-1. Ve a tu dashboard de Netlify
-2. Selecciona tu sitio
-3. Ve a "Domain settings"
-4. Agrega tu dominio personalizado
-5. Configura los registros DNS según las instrucciones
-
-### Formulario de Contacto
-El formulario de contacto actualmente muestra un mensaje de confirmación. Para que funcione completamente:
-
-1. **Usando Netlify Forms:**
-   - Netlify automáticamente detectará el formulario
-   - Los envíos aparecerán en tu dashboard de Netlify
-
-2. **Usando un servicio externo:**
-   - Modifica el JavaScript en `contacto.html`
-   - Integra con servicios como Formspree, EmailJS, o tu propio backend
-
-### Analytics
-Para agregar Google Analytics:
-
-1. Ve a tu dashboard de Netlify
-2. Ve a "Site settings" > "Code injection"
-3. Agrega el código de Google Analytics en el `<head>`
-
-## 📱 Características Responsive
-
-El sitio está completamente optimizado para:
-- **Desktop** (1200px+)
-- **Tablet** (768px - 1199px)
-- **Mobile** (320px - 767px)
-
-## 🔧 Personalización
-
-### Cambiar Colores
-Los colores están definidos en variables CSS en cada archivo HTML:
-
-```css
-:root {
-    --azul-marino: #1a365d;
-    --verde-vibrante: #38a169;
-    /* ... otros colores */
-}
-```
-
-### Cambiar Contenido
-- Edita directamente los archivos HTML
-- Actualiza la información de contacto
-- Modifica los testimonios y casos de éxito
-- Personaliza los servicios ofrecidos
-
-### Agregar Páginas
-1. Crea un nuevo archivo HTML
-2. Copia la estructura de header y footer de las páginas existentes
-3. Agrega el enlace en el menú de navegación
-4. Despliega los cambios
-
-## 📞 Soporte
-
-Para soporte técnico o consultas sobre el sitio web:
 - Email: info@psicometrica.co
-- Teléfono: +57 (1) 123-4567
+- Teléfono / WhatsApp: +57 310-2594866
+- Bogotá, Colombia
 
 ## 📄 Licencia
 
-© 2024 PsicoMétrica Consultores S.A.S. Todos los derechos reservados.
-
----
-
-**Nota:** Este sitio web está optimizado para Netlify y utiliza tecnologías modernas como CSS Grid, Flexbox y JavaScript ES6+ para una experiencia de usuario excepcional. 
+© 2025 PsicoMétrica Consultores S.A.S. Todos los derechos reservados.

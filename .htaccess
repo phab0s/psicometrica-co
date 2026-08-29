@@ -23,8 +23,8 @@ RewriteRule ^contacto/?$ contacto.html [L]
 # Redirigir /calculadora-ejemplo-vm a calculadora-ejemplo-vm.html
 RewriteRule ^calculadora-ejemplo-vm/?$ calculadora-ejemplo-vm.html [L]
 
-# Si no es ninguno de los anteriores, redirigir a index.html
-RewriteRule ^(.*)$ index.html [L]
+# Página de error 404 personalizada
+ErrorDocument 404 /404.html
 
 # Configuraciones adicionales para mejorar el rendimiento
 <IfModule mod_expires.c>
