@@ -20,6 +20,9 @@ RewriteRule ^clientes/?$ clientes.html [L]
 # Redirigir /contacto a contacto.html
 RewriteRule ^contacto/?$ contacto.html [L]
 
+# Redirigir /calculadora-ejemplo a calculadora-ejemplo.html
+RewriteRule ^calculadora-ejemplo/?$ calculadora-ejemplo.html [L]
+
 # Si no es ninguno de los anteriores, redirigir a index.html
 RewriteRule ^(.*)$ index.html [L]
 
