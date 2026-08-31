@@ -37,6 +37,17 @@
             flex-wrap: wrap;
             margin-top: 2rem;
         }
+
+        .cta-button.secundario {
+            background: transparent;
+            border: 2px solid var(--verde-vibrante);
+            color: var(--verde-vibrante);
+        }
+
+        .cta-button.secundario:hover {
+            background: var(--verde-vibrante);
+            color: var(--blanco);
+        }
     </style>
 </head>
 <body>
@@ -69,7 +80,7 @@
             <p>La página que buscas no existe o fue movida. Verifica la dirección o vuelve al inicio.</p>
             <div class="error-actions">
                 <a href="/" class="cta-button">Volver al inicio</a>
-                <a href="/contacto" class="cta-button" style="background: transparent; border: 2px solid var(--verde-vibrante);">Contactános</a>
+                <a href="/contacto" class="cta-button secundario">Contáctanos</a>
             </div>
         </div>
     </section>
