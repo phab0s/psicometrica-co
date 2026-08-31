@@ -20,8 +20,8 @@ RewriteRule ^clientes/?$ clientes.html [L]
 # Redirigir /contacto a contacto.html
 RewriteRule ^contacto/?$ contacto.html [L]
 
-# Redirigir /calculadora-ejemplo-vm a calculadora-ejemplo-vm.html
-RewriteRule ^calculadora-ejemplo-vm/?$ calculadora-ejemplo-vm.html [L]
+# Redirigir /calculadora-vm a calculadora-vm.html
+RewriteRule ^calculadora-vm/?$ calculadora-vm.html [L]
 
 # Página de error 404 personalizada
 ErrorDocument 404 /404.html
