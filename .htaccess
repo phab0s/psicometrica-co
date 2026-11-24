@@ -23,6 +23,9 @@ RewriteRule ^contacto/?$ contacto.html [L]
 # Redirigir /calculadora-vm a calculadora-vm.html
 RewriteRule ^calculadora-vm/?$ calculadora-vm.html [L]
 
+# Redirigir /politica-datos a politica-datos.html
+RewriteRule ^politica-datos/?$ politica-datos.html [L]
+
 # Página de error 404 personalizada
 ErrorDocument 404 /404.html
 

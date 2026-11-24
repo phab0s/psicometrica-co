@@ -266,6 +266,15 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--gris-medio);
 }
 
+.footer-bottom a {
+    color: var(--gris-medio);
+    text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+    color: var(--verde-vibrante);
+}
+
 /* WhatsApp Floating Button */
 .whatsapp-float {
     position: fixed;
